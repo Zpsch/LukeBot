@@ -1,4 +1,5 @@
 require('dotenv').config();
+const keep_alive = require('./keep_alive.js');
 const { Client, IntentsBitField, InteractionCollector } = require('discord.js');
 
 const client = new Client({

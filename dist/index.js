@@ -34,6 +34,7 @@ client.on('messageCreate', (message) => {
     }
     if (message.content.toLowerCase().indexOf('bolsonaro') != -1 || message.content.toLowerCase().indexOf('bonoro') != -1){
         message.reply('Based');
+        if(message.guild.id === '1034555657736687687') message.reply('https://cdn.discordapp.com/attachments/1228038607428911144/1230939030128951336/0f4cac92-07c6-4335-a510-eeb36cc3a888.png?ex=6635244e&is=6622af4e&hm=a6443325170f22771df138ab95e190528fa466f5e5bf254abc2c69b2e0d8678b&');
     }
     if (message.content.toLowerCase().indexOf('bee') != -1 || message.content.toLowerCase().indexOf('abelha') != -1){
         message.reply('https://open.spotify.com/playlist/6O8wFpsgfGV6yBBur1tbOz?si=bea67af1705445ce');

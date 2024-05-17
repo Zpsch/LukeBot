@@ -26,7 +26,7 @@ client.on('messageCreate', (message) => {
             return;
         }
         let reply, endreply = "";
-        let neg = 0, sum, mod, bigsum = Number.MIN_VALUE;
+        let neg, sum, mod, bigsum = Number.MIN_VALUE;
         let msg = message.content;
         let rest = msg;
         rest = rest.slice(rest.indexOf("r")+1);
@@ -40,6 +40,7 @@ client.on('messageCreate', (message) => {
         for(let i = 0; i < times; i++){
             sum = 0;
             mod = 0;
+            neg = 0;
             rest = msg;
             reply = "";
             while(rest !== ' '){
@@ -176,7 +177,7 @@ client.on('interactionCreate', (interaction) => {
     if(interaction.commandName === 'r'){
        let msg = interaction.options.get('mensagem').value;
        let reply, endreply = "";
-        let neg = 0, sum, mod, bigsum = Number.MIN_VALUE;
+        let neg, sum, mod, bigsum = Number.MIN_VALUE;
         let rest = msg;
         rest = rest.slice(rest.indexOf("r")+1);
         if(rest.indexOf(" ") == 0) rest = rest.slice(rest.indexOf(" ")+1);
@@ -189,6 +190,7 @@ client.on('interactionCreate', (interaction) => {
         for(let i = 0; i < times; i++){
             sum = 0;
             mod = 0;
+            neg = 0;
             rest = msg;
             reply = "";
             while(rest !== ' '){

@@ -48,7 +48,8 @@ function getRandomInt(max) {
                     else mod += Number(rest);
                 }
                 else{
-                const ammount = Number(rest.slice(0, rest.indexOf("d")));
+                    const ammount = 1;
+                    if(rest.indexOf("d") > 0) ammount = Number(rest.slice(0, rest.indexOf("d")));
                 const faces = Number(rest.slice(rest.indexOf('d')+1));
                 reply+= "[";
                 for(let i = 0; i < ammount-1; i++){
@@ -91,7 +92,8 @@ function getRandomInt(max) {
                    }
                 }
                 else{
-                    const ammount = Number(work.slice(0,work.indexOf('d')));
+                    const ammount = 1;
+                    if(rest.indexOf("d") > 0) ammount = Number(rest.slice(0, rest.indexOf("d")));
                     const faces = Number(work.slice(work.indexOf('d')+1));
                     reply+= "[";
                     for(let i = 0; i < ammount-1; i++){

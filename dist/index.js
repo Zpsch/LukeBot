@@ -176,7 +176,7 @@ client.on('interactionCreate', (interaction) => {
     if(interaction.commandName === 'r'){
        let msg = interaction.options.get('mensagem').value;
        let reply, endreply = "";
-        let neg = 0, sum, mod = 0, bigsum = Number.MIN_VALUE;
+        let neg = 0, sum, mod, bigsum = Number.MIN_VALUE;
         let rest = msg;
         rest = rest.slice(rest.indexOf("r")+1);
         if(rest.indexOf(" ") == 0) rest = rest.slice(rest.indexOf(" ")+1);
@@ -188,6 +188,7 @@ client.on('interactionCreate', (interaction) => {
         msg = rest;
         for(let i = 0; i < times; i++){
             sum = 0;
+            mod = 0;
             rest = msg;
             reply = "";
             while(rest !== ' '){

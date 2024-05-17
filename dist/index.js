@@ -40,7 +40,7 @@ client.on('messageCreate', (message) => {
         for(let i = 0; i < times; i++){
             sum = 0;
             mod = 0;
-            neg = 0;
+            neg = 0
             rest = msg;
             reply = "";
             while(rest !== ' '){
@@ -70,7 +70,8 @@ client.on('messageCreate', (message) => {
             }
                 sum += mod;
                 if(sum > bigsum) bigsum = sum;
-                if(mod != 0) reply+= `${mod}`;                
+                if(mod < 0) reply+= `${mod}`;
+                if(mod > 0) reply+= `+ ${mod}`;                
                 reply = "` " + `${sum}` + " ` ⟵ " + reply +"\n";
                 endreply += reply;
                 rest = ' ';
@@ -119,7 +120,7 @@ client.on('messageCreate', (message) => {
                         if(num == faces || num == 1) reply+= `** ${num}** ] ${ammount}d${faces} `;
                         else reply+= ` ${num} ] ${ammount}d${faces} `;
                         if(neg == 1 && rest.indexOf("d") != -1) reply += "- ";
-                        else if(neg == 0) reply += "+ ";
+                        else if(neg == 0 && rest.indexOf("d") != -1) reply += "+ ";
                         
                 }
             }
@@ -220,7 +221,8 @@ client.on('interactionCreate', (interaction) => {
             }
                 sum += mod;
                 if(sum > bigsum) bigsum = sum;
-                if(mod != 0) reply+= `${mod}`;                
+                if(mod < 0) reply+= `${mod}`;
+                if(mod > 0 ) reply+= `+ ${mod}`;                
                 reply = "` " + `${sum}` + " ` ⟵ " + reply +"\n";
                 endreply += reply;
                 rest = ' ';
@@ -269,7 +271,7 @@ client.on('interactionCreate', (interaction) => {
                         if(num == faces || num == 1) reply+= `** ${num}** ] ${ammount}d${faces} `;
                         else reply+= ` ${num} ] ${ammount}d${faces} `;
                         if(neg == 1 && rest.indexOf("d") != -1) reply += "- ";
-                        else if(neg == 0) reply += "+ ";
+                        else if(neg == 0  && rest.indexOf("d") != -1) reply += "+ ";
                         
                 }
             }

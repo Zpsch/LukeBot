@@ -169,5 +169,119 @@ client.on('messageCreate', (message) => {
     }
 });
 
+client.on('interactionCreate', (interaction) => {
+    if (!interaction.isChatInputCommand())  return;
+
+    if(interaction.commandName === 'r'){
+       let msg = interaction.options.get('mensagem').value;
+       let reply, endreply = "";
+        let neg = 0, sum, mod = 0, bigsum = Number.MIN_VALUE;
+        let rest = msg;
+        rest = rest.slice(rest.indexOf("r")+1);
+        if(rest.indexOf(" ") == 0) rest = rest.slice(rest.indexOf(" ")+1);
+        let times = 1;
+        if(rest.indexOf("#") != -1){
+        times = Number(rest.slice(0, rest.indexOf("#")));
+        rest = rest.slice(rest.indexOf("#")+1);       
+        }
+        msg = rest;
+        for(let i = 0; i < times; i++){
+            sum = 0;
+            rest = msg;
+            reply = "";
+            while(rest !== ' '){
+            if(rest.indexOf("+") == -1 && rest.indexOf("-") == -1){
+                if(rest.indexOf("d") == -1){                    
+                    if(neg == 1) mod -= Number(rest);
+                    else mod += Number(rest);
+                }
+                else{
+                    let ammount = 1;
+                if(rest.indexOf("d") > 0) ammount = Number(rest.slice(0, rest.indexOf("d")));
+                const faces = Number(rest.slice(rest.indexOf('d')+1));
+                reply+= "[";
+                for(let i = 0; i < ammount-1; i++){
+                let num = getRandomInt(faces)+1; 
+                if(num == faces || num == 1) reply+= `** ${num}**,`;
+                else reply+= ` ${num},`;
+                if(neg == 1) sum-= num;
+                    else sum+= num;
+                }
+
+                let num = getRandomInt(faces)+1;
+                if(num == faces || num == 1) reply+= `** ${num}** ] ${ammount}d${faces} `;
+                else reply+= ` ${num} ] ${ammount}d${faces} `;
+                if(neg == 1) sum-= num;
+                    else sum+= num;
+            }
+                sum += mod;
+                if(sum > bigsum) bigsum = sum;
+                if(mod != 0) reply+= `${mod}`;                
+                reply = "` " + `${sum}` + " ` ⟵ " + reply +"\n";
+                endreply += reply;
+                rest = ' ';
+                
+                
+            }
+            else{
+                let work;
+                if(rest.indexOf('+') != -1 && rest.indexOf('+') < rest.indexOf('-') ||  rest.indexOf('-') == -1) work = rest.slice(0, rest.indexOf('+'))
+                else work = rest.slice(0, rest.indexOf('-'))
+                if(work.indexOf("d") == -1){                    
+                    if(neg == 1) mod -= Number(work);
+                    else mod += Number(work);
+                    if(rest.indexOf('+') != -1 && rest.indexOf('+') < rest.indexOf('-') ||  rest.indexOf('-') == -1){
+                        rest = rest.slice(rest.indexOf('+')+1);
+                        neg = 0;
+                   }
+                   else{
+                       rest = rest.slice(rest.indexOf('-')+1);
+                       neg = 1;
+                   }
+                }
+                else{
+                    let ammount = 1;
+                    if(rest.indexOf("d") > 0) ammount = Number(rest.slice(0, rest.indexOf("d")));
+                    const faces = Number(work.slice(work.indexOf('d')+1));
+                    reply+= "[";
+                    for(let i = 0; i < ammount-1; i++){
+                        let num = getRandomInt(faces)+1;
+                        if(num == faces || num == 1) reply+= `** ${num}**,`;
+                        else reply+= ` ${num},`;
+                        if(neg == 1) sum-= num;
+                        else sum+= num;
+                        }
+                        let num = getRandomInt(faces)+1;
+                        if(neg == 1) sum -= num;
+                        else sum+= num;
+                        if(rest.indexOf('+') != -1 && rest.indexOf('+') < rest.indexOf('-') ||  rest.indexOf('-') == -1){
+                             rest = rest.slice(rest.indexOf('+')+1);
+                             neg = 0;
+                        }
+                        else{
+                            rest = rest.slice(rest.indexOf('-')+1);
+                            neg = 1;
+                        }
+                        if(num == faces || num == 1) reply+= `** ${num}** ] ${ammount}d${faces} `;
+                        else reply+= ` ${num} ] ${ammount}d${faces} `;
+                        if(neg == 1 && rest.indexOf("d") != -1) reply += "- ";
+                        else if(neg == 0) reply += "+ ";
+                        
+                }
+            }
+                
+            }
+            
+        }
+        if(isNaN(sum)) return;
+        if(endreply.length > 2000){
+            if(times == 1) interaction.reply(`A mensagem passaria do limite de caracteres do discord, mas a soma deu ${bigsum}`);
+            else interaction.reply(`A mensagem passaria do limite de caracteres do discord, mas a maior soma deu ${bigsum}`);
+            return;
+        }
+        interaction.reply(endreply);
+    }
+        
+});
 
 client.login(process.env.TOKEN);

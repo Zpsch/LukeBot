@@ -1,6 +1,6 @@
 require('dotenv').config();
 const keep_alive = require('./keep_alive.js');
-const { Client, IntentsBitField, InteractionCollector } = require('discord.js');
+const { Client, IntentsBitField, InteractionCollector, ApplicationCommandOptionWithChoicesAndAutocompleteMixin } = require('discord.js');
 
 const client = new Client({
     intents:[
@@ -19,7 +19,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-  client.on('messageCreate', (message) => {
+client.on('messageCreate', (message) => {
     
     if(message.content.indexOf('!r') == 0){
         if(message.author.bot){
@@ -49,7 +49,7 @@ function getRandomInt(max) {
                 }
                 else{
                     let ammount = 1;
-                    if(rest.indexOf("d") > 0) ammount = Number(rest.slice(0, rest.indexOf("d")));
+                if(rest.indexOf("d") > 0) ammount = Number(rest.slice(0, rest.indexOf("d")));
                 const faces = Number(rest.slice(rest.indexOf('d')+1));
                 reply+= "[";
                 for(let i = 0; i < ammount-1; i++){
@@ -168,5 +168,6 @@ function getRandomInt(max) {
         message.reply('https://tenor.com/view/baki-prison-oliva-piss-baki-son-of-ogre-gif-3428302401975626397');
     }
 });
+
 
 client.login(process.env.TOKEN);

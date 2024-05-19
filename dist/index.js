@@ -155,7 +155,7 @@ client.on('messageCreate', (message) => {
     if (message.content.toLowerCase().indexOf('bee') != -1 || message.content.toLowerCase().indexOf('abelha') != -1){
         message.reply('https://open.spotify.com/playlist/6O8wFpsgfGV6yBBur1tbOz?si=bea67af1705445ce');
     }
-    if (message.content.toLowerCase().indexOf('faz o l') != -1 || message.content.toLowerCase().indexOf('faiz o eli') != -1){
+    if (message.content.toLowerCase().indexOf('faz o l') != -1 || message.content.toLowerCase().indexOf('faiz o eli') != -1 || message.content.toLowerCase().indexOf('faça o l') != -1){
         message.reply('https://cdn.discordapp.com/attachments/1145846578922389536/1224054657622609920/image.png?ex=6625533c&is=6612de3c&hm=1abf8b06934c1ede81cb4ed1eb7ea239561f4e4d63673ef1b50f5a223594a17f&');
     }
     if (message.content.toLowerCase().indexOf('rubens') != -1){
@@ -169,6 +169,9 @@ client.on('messageCreate', (message) => {
     }
     if (message.content.toLowerCase().indexOf('call') != -1){
         message.reply('https://tenor.com/view/baki-prison-oliva-piss-baki-son-of-ogre-gif-3428302401975626397');
+    }
+    if (message.content.toLowerCase().indexOf('kg') != -1 || message.content.toLowerCase().indexOf('danoni') != -1 || message.content.toLowerCase().indexOf('xuxu') != -1){
+        message.reply('https://cdn.discordapp.com/attachments/838474017236582440/1241559950396751964/image.png?ex=664aa44f&is=664952cf&hm=5e7a4e06aff3fca4041fe2f9b7d382b9750a3b88ff4cf98766908d39a6471c24&');
     }
 });
 

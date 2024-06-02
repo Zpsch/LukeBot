@@ -170,7 +170,7 @@ client.on('messageCreate', (message) => {
     if (message.content.toLowerCase().indexOf('call') != -1){
         message.reply('https://tenor.com/view/baki-prison-oliva-piss-baki-son-of-ogre-gif-3428302401975626397');
     }
-    if (message.content.toLowerCase().indexOf('kg') != -1 || message.content.toLowerCase().indexOf('danoni') != -1 || message.content.toLowerCase().indexOf('xuxu') != -1){
+    if (message.content.toLowerCase() == 'kg' || message.content.toLowerCase().indexOf('danoni') != -1 || message.content.toLowerCase().indexOf('xuxu') != -1){
         message.reply('https://cdn.discordapp.com/attachments/838474017236582440/1241559950396751964/image.png?ex=664aa44f&is=664952cf&hm=5e7a4e06aff3fca4041fe2f9b7d382b9750a3b88ff4cf98766908d39a6471c24&');
     }
 });

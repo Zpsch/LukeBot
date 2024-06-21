@@ -2,6 +2,18 @@ require('dotenv').config();
 const keep_alive = require('./keep_alive.js');
 const { Client, IntentsBitField, InteractionCollector, ApplicationCommandOptionWithChoicesAndAutocompleteMixin } = require('discord.js');
 
+process.on('unhandled Rejection', async (reason, promise) => {
+     console.log('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (err) => { 
+    console.log('Uncaught Expection: ', err);
+});
+
+process.on("uncaughtException Monitor", (err, origin) => { 
+    console.log('Uncaught Expection Monitor', err, origin);
+});
+
 const client = new Client({
     intents:[
         IntentsBitField.Flags.Guilds,

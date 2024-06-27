@@ -166,13 +166,14 @@ function dice(msg, message){
 }
 
 function eastereggs(message){
+    if(message.guild.id === '985848231260999734') return; //Remove eastereggs no Death Despair
     if (message.content.toLowerCase().indexOf('bale') != -1){
         message.reply('E o Honrado <@680564388834705497>?');
     }
     if (message.content.toLowerCase().indexOf('shinmon') != -1){
         message.reply('Eu comi...');
     }
-    if (message.content.toLowerCase().indexOf('gay') != -1 ){
+    if (message.content.toLowerCase().indexOf('gay') != -1 || message.content.toLowerCase().indexOf('boiola') != -1){
         message.reply('Falou em Guilherme?');
     }
     if (message.content.toLowerCase().indexOf('lunee') != -1){
@@ -191,9 +192,6 @@ function eastereggs(message){
     if (message.content.toLowerCase().indexOf('rubens') != -1){
         message.reply('https://cdn.discordapp.com/attachments/1145846578922389536/1228161431107797097/IMG-20240411-WA0037.jpg?ex=662b0977&is=66189477&hm=1f52655c9a537be8b975d7ab3e379b46a43747f6b2ff2ddc00de6c0d12fbe6a2&');
     }
-    if (message.content.toLowerCase().indexOf('gustavo') != -1 || message.content.toLowerCase().indexOf('guilherme') != -1){
-        message.reply('https://cdn.discordapp.com/attachments/1228164941819936809/1228174270547496990/images_-_2024-04-11T234548.358.jpg?ex=662b156c&is=6618a06c&hm=0ade1dc7301b18e9f88cb8553d47c3d1f798bf8c97a99213203f0f8643335f49&');
-    }
     if (message.content.toLowerCase().indexOf('rapha') != -1){
         message.reply('https://cdn.discordapp.com/attachments/1145846578922389536/1228367471212367944/20240412_123330.gif?ex=662bc95b&is=6619545b&hm=db47424a7f8f6d70fe7d9a4ca46182c7ba6e20d1147b013699d23e61b24bbdb4&');
     }
@@ -202,6 +200,9 @@ function eastereggs(message){
     }
     if (message.content.toLowerCase() == 'kg' || message.content.toLowerCase().indexOf('danoni') != -1 || message.content.toLowerCase().indexOf('xuxu') != -1){
         message.reply('https://cdn.discordapp.com/attachments/838474017236582440/1241559950396751964/image.png?ex=664aa44f&is=664952cf&hm=5e7a4e06aff3fca4041fe2f9b7d382b9750a3b88ff4cf98766908d39a6471c24&');
+    }
+    if (message.content.toLowerCase().indexOf('gustavo') != -1 || message.content.toLowerCase().indexOf('guilherme') != -1){
+        message.reply('https://cdn.discordapp.com/attachments/1228164941819936809/1228174270547496990/images_-_2024-04-11T234548.358.jpg?ex=662b156c&is=6618a06c&hm=0ade1dc7301b18e9f88cb8553d47c3d1f798bf8c97a99213203f0f8643335f49&');
     }
 }
 client.login(process.env.TOKEN);

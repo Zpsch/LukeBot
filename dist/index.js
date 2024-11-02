@@ -204,5 +204,11 @@ function eastereggs(message){
     if (message.content.toLowerCase().indexOf('gustavo') != -1 || message.content.toLowerCase().indexOf('guilherme') != -1){
         message.reply('https://cdn.discordapp.com/attachments/1228164941819936809/1228174270547496990/images_-_2024-04-11T234548.358.jpg?ex=662b156c&is=6618a06c&hm=0ade1dc7301b18e9f88cb8553d47c3d1f798bf8c97a99213203f0f8643335f49&');
     }
+     if (message.content.toLowerCase().indexOf('vampetada') != -1){
+        message.reply('https://cdn.discordapp.com/attachments/1170949826385543178/1301031499155509339/image.png?ex=67264b41&is=6724f9c1&hm=80eeddcfa21132ec5bf00f190634935f5bce41debe10c186f2e397fa25e42ed7&');
+    }
+     if (message.content.toLowerCase().indexOf('foi de vater') != -1 || message.content.toLowerCase().indexOf('foi de väter') != -1){
+        message.reply('https://cdn.discordapp.com/attachments/838474017236582440/1301926239870779515/VaterMarikaAdamus.png?ex=672640cc&is=6724ef4c&hm=06d90d5ed0d2a0b6d901fa59adbd5311bd314360eae7a11b57d2a3feb7003760&');
+    }
 }
 client.login(process.env.TOKEN);

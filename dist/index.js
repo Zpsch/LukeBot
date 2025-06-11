@@ -210,5 +210,8 @@ function eastereggs(message){
      if (message.content.toLowerCase().indexOf('foi de vater') != -1 || message.content.toLowerCase().indexOf('foi de väter') != -1){
         message.reply('https://cdn.discordapp.com/attachments/838474017236582440/1301926239870779515/VaterMarikaAdamus.png?ex=672640cc&is=6724ef4c&hm=06d90d5ed0d2a0b6d901fa59adbd5311bd314360eae7a11b57d2a3feb7003760&');
     }
+     if (message.content.toLowerCase().indexOf('rape') != -1){
+        message.reply('https://cdn.discordapp.com/attachments/1228359765285933088/1363692452917284976/lUqdEJW.png?ex=684988d0&is=68483750&hm=e8205e10b656656b37ae178cd32ad3f0a08e3c0fb9601b09b10903b09df646c3&');
+    }
 }
 client.login(process.env.TOKEN);
